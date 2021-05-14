@@ -1,5 +1,5 @@
 const sequelize = require('../config/connection');
-const Department = require('../models/Department');
+const Department = require('../models/Department.js');
 const departmentData = require('./department-seeds.json');
 
 const seedDatabase = async () => {
