@@ -7,7 +7,7 @@ const roleData = [
         "department_id" : 1
     },
     {
-        "title" : "manager",
+        "title" : "specialist",
         "salary" : 100000,
         "department_id" : 2
     }
