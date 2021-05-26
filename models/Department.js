@@ -11,7 +11,7 @@ Department.init(
         primaryKey: true,
         autoIncrement: true,
     },
-    name: {
+    department_name: {
         type: DataTypes.STRING,
          allowNull: false,
     }

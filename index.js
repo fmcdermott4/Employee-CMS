@@ -71,18 +71,31 @@ function menuOptionsPrompt() {
 };
 menuOptionsPrompt();
 function viewDepartments() {
-    console.clear();
-    connection.query('SELECT name FROM employeetrackerdb.department;', (err,res) => {
+    
+    connection.query('SELECT department_name FROM department;', (err,res) => {
         if (err) throw err;
+        console.clear();
         console.table(res);
         menuOptionsPrompt();
     });
     
 };
 
-function viewEmployees() {
-    menuOptionsPrompt();
-};
 function viewRoles() {
-    menuOptionsPrompt();
+    connection.query('SELECT role.id, role.title, role.salary, department.department_name FROM role, department WHERE role.department_id = department.id;', (err,res) =>{
+        if (err) throw err;
+        console.clear();
+        console.table(res);
+        menuOptionsPrompt();
+    })
+};
+
+function viewEmployees() {
+    connection.query('SELECT employee.id, employee.last_name, employee.first_name, role.title, role.salary, department.department_name FROM employee, role, department WHERE employee.role_id = role.id AND role.department_id = department.id',(err,res) => {
+        if (err) throw err;
+        console.clear();
+        console.table(res);
+        menuOptionsPrompt();
+    })
+    
 };

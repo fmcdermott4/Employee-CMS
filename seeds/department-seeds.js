@@ -2,10 +2,10 @@ const {Department} = require('../models');
 
 const departmentData = [
     {
-        "name" : "Operations"
+        "department_name" : "Operations"
     },
     {
-        "name" : "Logistics"
+        "department_name" : "Logistics"
     }
 ];
 
