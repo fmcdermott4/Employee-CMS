@@ -6,11 +6,11 @@ const seedRole = require('./role-seeds');
 const seedDatabase = async () => {
     await sequelize.sync({ force: true });
 
+    await seedDepartment();
+
     await seedRole();
 
-    await seedEmployee();
-
-    await seedDepartment();
+    await seedEmployee();    
 
     process.exit(0);
 };

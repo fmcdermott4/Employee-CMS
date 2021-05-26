@@ -1,6 +1,7 @@
 var mysql = require('mysql2');
 var connection = mysql.createConnection({
   host     : 'localhost',
+  port     : 3306,
   user     : 'root',
   password : 'Frankspass',
   database : 'employeetrackerDB'
@@ -58,13 +59,30 @@ function menuOptionsPrompt() {
                 updateEmployeeRoles();
                 break;
             case 'Exit':
+                console.clear();
                 console.log("Goodbye!");
-                process.exit(0);
-                break;   
+                process.exit(0);   
             default:
                 console.log("Not an option");
+                menuOptionsPrompt();
                 break;
         }
     });
 };
 menuOptionsPrompt();
+function viewDepartments() {
+    console.clear();
+    connection.query('SELECT name FROM employeetrackerdb.department;', (err,res) => {
+        if (err) throw err;
+        console.table(res);
+        menuOptionsPrompt();
+    });
+    
+};
+
+function viewEmployees() {
+    menuOptionsPrompt();
+};
+function viewRoles() {
+    menuOptionsPrompt();
+};

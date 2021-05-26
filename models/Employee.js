@@ -20,7 +20,11 @@ Employee.init(
             allowNull: false,
         },
         role_id: {
-            type: DataTypes.INTEGER
+            type: DataTypes.INTEGER,
+            references: {
+                model: 'role',
+                key: 'id'
+            }
         },
         manager_id: {
             type: DataTypes.INTEGER

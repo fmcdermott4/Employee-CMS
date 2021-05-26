@@ -20,7 +20,11 @@ Role.init(
             allowNull: false,
         },
         department_id: {
-            type: DataTypes.INTEGER
+            type: DataTypes.INTEGER,
+            refrences: {
+                model: 'department',
+                key: 'id'
+            }
         },        
     },    
     {
