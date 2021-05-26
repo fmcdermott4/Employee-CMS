@@ -4,7 +4,9 @@
   "description": "use this command line interface to view and interact with a database that stores employee data",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index.js",
+    "seed": "node ./seeds/index.js"
   },
   "repository": {
     "type": "git",
